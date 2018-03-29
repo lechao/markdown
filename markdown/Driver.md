@@ -55,7 +55,7 @@ asntype | String | 用户类型（'CUSTOMER'：客户端,'DRIVER':司机端）
 ### 所需参数
 
 名称 | 类型 | 描述
-- | - | - 
+--------- | -------- | ------------
 username | String | 用户登录名称
 oldpassword | String | 旧用户密码
 newpassword | String | 新用户密码 
