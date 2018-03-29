@@ -6,7 +6,7 @@
 ### 所需参数
 
 名称 | 类型 | 描述
-- | :-: | -: 
+------|----------- | -------------
 username | String | 用户登录名称
 password | String | 用户密码
 asntype | String | 用户类型（'CUSTOMER'：客户端,'DRIVER':司机端）
