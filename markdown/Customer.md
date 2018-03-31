@@ -156,3 +156,63 @@ ordno | String | 订单号（必填）
 ```
 {"status": 0, "message": "获取数据失败!"}
 ```
+
+# 4.查看物流
+请求地址：==http://47.93.8.36:8000/customer/getorders_detail/==  
+请求方式：==POST==  
+
+
+### 所需参数
+名称 | 类型 | 描述
+---------- | --------------- | ------------ 
+ordno | String | 订单号（必填）
+
+成功：
+```
+{
+    "message": "success",
+    "status": 1,
+    "data": {
+        "boxes_num": 3,
+        "send_time": "2018-01-01 08:15:00",
+        "note": "不要磕碰",
+        "create_time": "2018-03-25 16:21:24",
+        "create_mobile": "15221089804",
+        "number": 30,
+        "receive_mobile": "15221089804",
+        "price": "22.00",
+        "receive_name": "pengpeng",
+        "send_name": "Happy",
+        "volume": "22.23",
+        "weight": "3",
+        "send_mobile": "15221089804",
+        "trips": [
+            {
+                "note": "备注",
+                "driver_mobile": "15221089804",
+                "trip_no": "TP123943762839232",
+                "driver_uid": 5,
+                "create_uid": 5,
+                "plate_number": "沪M12j11111",
+                "driver_name": "李白1",
+                "create_time": "2018-03-25 16:40:41",
+                "status": 1
+            }
+        ],
+        "status": 1,
+        "receive_time": "2018-01-05 08:15:00",
+        "receive_address": "上海市闵行区100路",
+        "content": "订单内容123",
+        "order_no": "ON1222121212121444",
+        "create_uid": 5,
+        "send_address": "上海市浦东新区金科路100号",
+        "user_id": 5
+    }
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
