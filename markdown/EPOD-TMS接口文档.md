@@ -869,7 +869,16 @@ role_name: "司机"
 | driver_name          | String |                                             司机姓名 |
 | status          | Int |                                             运单状态；1：未发车；2:运输中;；3：已结束 |
 | note          | String |                                             备注 |
-| plate_number          | Decimal |                                             车牌号 |
+| plate_number          | String |                                             车牌号 |
+| tot_vol          | Decimal |                                             总体积 |
+| tot_gross_w          | Decimal |                                             总重量 |
+| from_address          | String |                                             起点 |
+| to_address          | String |                                             终点 |
+| pre_load_time          | Datetime |                                             要求提货时间 |
+| pre_ubload_time          | Datetime |                                             要求到货时间 |
+| eta          | Datetime |                                             eta |
+| gps_no          | String |                                             gps号码 |
+
 
 #### 返回详情
 成功：
@@ -885,7 +894,15 @@ driver_uid: 5,
 trip_no: "TP123943762839232",
 create_uid: 5,
 plate_number: "沪M12j11111",
-create_time: "2018-03-25 16:40:41"
+create_time: "2018-03-25 16:40:41"，
+tot_vol:22.2,
+tot_gross_w:22.2,
+from_address:"上海市闵行区xx路"，
+to_address:"上海市闵行区xx路",
+pre_load_time:"2018-03-25 16:40:41",
+pre_ubload_time:"2018-03-25 16:40:41",
+eta:"2018-03-25 16:40:41",
+gps_no:"gpsid"
 },
 status: 1
 }
@@ -920,6 +937,14 @@ status: 1
 | status          | Int |                                             运单状态；1：未发车；2:运输中;；3：已结束 |
 | note          | String |                                             备注 |
 | plate_number          | Decimal |                                             车牌号 |
+| tot_vol          | Decimal |                                             总体积 |
+| tot_gross_w          | Decimal |                                             总重量 |
+| from_address          | String |                                             起点 |
+| to_address          | String |                                             终点 |
+| pre_load_time          | Datetime |                                             要求提货时间 |
+| pre_ubload_time          | Datetime |                                             要求到货时间 |
+| eta          | Datetime |                                             eta |
+| gps_no          | String |                                             gps号码 |
 #### 返回详情
 成功：
 ```
@@ -935,7 +960,15 @@ status: 1
             "trip_no": "TP123943762839232",
             "create_uid": 5,
             "plate_number": "沪M12j11111",
-            "create_time": "2018-03-25 16:40:41"
+            "create_time": "2018-03-25 16:40:41",
+            "tot_vol":22.2,
+            "tot_gross_w":22.2,
+            "from_address":"上海市闵行区xx路"，
+            "to_address":"上海市闵行区xx路",
+            "pre_load_time":"2018-03-25 16:40:41",
+            "pre_ubload_time":"2018-03-25 16:40:41",
+            "eta":"2018-03-25 16:40:41",
+            "gps_no":"gpsid"
         }
     ],
     "status": 1
@@ -965,7 +998,14 @@ status: 1
 | status          | Int |                                             运单状态；1：未发车；2:运输中;；3：已结束 |
 | note          | String |                                             备注 |
 | plate_number          | Decimal |                                             车牌号 |
-
+| tot_vol          | Decimal |                                             总体积 |
+| tot_gross_w          | Decimal |                                             总重量 |
+| from_address          | String |                                             起点 |
+| to_address          | String |                                             终点 |
+| pre_load_time          | Datetime |                                             要求提货时间 |
+| pre_ubload_time          | Datetime |                                             要求到货时间 |
+| eta          | Datetime |                                             eta |
+| gps_no          | String |                                             gps号码 |
 #### 返回详情
 成功：
 ```
@@ -1002,7 +1042,14 @@ status: 1
 | status          | Int |                                             运单状态；1：未发车；2:运输中;；3：已结束 |
 | note          | String |                                             备注 |
 | plate_number          | Decimal |                                             车牌号 |
-
+| tot_vol          | Decimal |                                             总体积 |
+| tot_gross_w          | Decimal |                                             总重量 |
+| from_address          | String |                                             起点 |
+| to_address          | String |                                             终点 |
+| pre_load_time          | Datetime |                                             要求提货时间 |
+| pre_ubload_time          | Datetime |                                             要求到货时间 |
+| eta          | Datetime |                                             eta |
+| gps_no          | String |                                             gps号码 |
 #### 返回详情
 成功：
 ```
