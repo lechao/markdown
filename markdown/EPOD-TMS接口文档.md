@@ -620,7 +620,7 @@ role_name: "司机"
 
 | 名称           |  类型  |                                             描述 |
 | -------------- | :----: | -----------------------------------------------: |
-| create_uid          | Int |                                             创建人Id |
+| create_uid          | String |                                             创建人登录名 |
 | content          | String |                                             订单内容表述 |
 | price          | Decimal |                                             订单价格 |
 | create_mobile          | String |                                             创建人手机号 |
@@ -636,10 +636,11 @@ role_name: "司机"
 | send_time          | Date |                                             发货时间 |
 | receive_time          | Date |                                             收获时间 |
 | status          | Int |                                             订单状态 |
-| user_id          | Int |                                             下单人用户id |
+| user_id          | String |                                             下单人用户 唯一登录名 |
 | send_name          | String |                                             发货人姓名 |
 | receive_name          | String |                                             收货人姓名 |
-| note          | String |                                             备注 |
+| note          | String |                                             备注 |
+| customer      |String  |                                              客户|
 #### 返回详情
 成功：
 ```
@@ -666,8 +667,9 @@ role_name: "司机"
             "user_id": 5,
             "receive_time": "2018-01-05 08:15:00",
             "price": "22.00",
-            "order_no": "ON1222121212121444"
-        },
+            "order_no": "ON1222121212121444",
+            "customer":"工商银行"
+       },
     "status": 1
 }
 ```
@@ -693,7 +695,7 @@ role_name: "司机"
 
 | 名称           |  类型  |                                             描述 |
 | -------------- | :----: | -----------------------------------------------: |
-| create_uid          | Int |                                             创建人Id |
+| create_uid          | String |                                             创建人 登录名 |
 | content          | String |                                             订单内容表述 |
 | price          | Decimal |                                             订单价格 |
 | create_mobile          | String |                                             创建人手机号 |
@@ -709,10 +711,11 @@ role_name: "司机"
 | send_time          | Date |                                             发货时间 |
 | receive_time          | Date |                                             收获时间 |
 | status          | Int |                                             订单状态 |
-| user_id          | Int |                                             下单人用户id |
+| user_id          | String |                                             下单人用户登录名 |
 | send_name          | String |                                             发货人姓名 |
 | receive_name          | String |                                             收货人姓名 |
-| note          | String |                                             备注 |
+| note          | String |                                             备注 |
+| customer      | String |                                              客户名称|
 #### 返回详情
 成功：
 ```
@@ -735,13 +738,14 @@ role_name: "司机"
             "create_mobile": "15221089804",
             "send_time": "2018-01-01 08:15:00",
             "note": "不要磕碰",
-            "create_uid": 5,
+            "create_uid": "test",
             "weight": "3",
             "user_id": 5,
             "receive_time": "2018-01-05 08:15:00",
             "price": "22.00",
-            "order_no": "ON1222121212121444"
-        }
+            "order_no": "ON1222121212121444",
+            "customer":"工商银行"
+        }
     ],
     "status": 1
 }
@@ -762,7 +766,7 @@ role_name: "司机"
 
 | 名称           |  类型  |                                             描述 |
 | -------------- | :----: | -----------------------------------------------: |
-| create_uid          | Int |                                             创建人Id |
+| create_uid          | String |                                             创建人Id |
 | content          | String |                                             订单内容表述 |
 | price          | Decimal |                                             订单价格 |
 | create_mobile          | String |                                             创建人手机号 |
@@ -778,11 +782,11 @@ role_name: "司机"
 | send_time          | Date |                                             发货时间 |
 | receive_time          | Date |                                             收获时间 |
 | status          | Int |                                             订单状态 1：未发货，2：在途，3：已完成，4：已评价 |
-| user_id          | Int |                                             下单人用户id |
+| user_id          | String |                                             下单人用户  |
 | send_name          | String |                                             发货人姓名 |
 | receive_name          | String |                                             收货人姓名 |
-| note          | String |                                             备注 |
-
+| note          | String |                                             备注 |
+| customer      | String    |                                           客户|
 #### 返回详情
 成功：
 ```
@@ -831,7 +835,7 @@ role_name: "司机"
 | send_name          | String |                                             发货人姓名 |
 | receive_name          | String |                                             收货人姓名 |
 | note          | String |                                             备注 |
-
+| customer      | String    |                                           客户|
 #### 返回详情
 成功：
 ```
