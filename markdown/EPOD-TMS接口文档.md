@@ -626,7 +626,7 @@ role_name: "司机"
 | create_mobile          | String |                                             创建人手机号 |
 | send_mobile          | String |                                             发货人手机号 |
 | receive_mobile          | String |                                             收货人手机号 |
-| order_no          | String |                                             订单号 |
+| order_no          | String |                                             订单号（托运单号） |
 | volume          | Decimal |                                             体积 |
 | weight          | Decimal |                                             重量 |
 | number          | Int |                                             数量（单位件）。 |
@@ -641,6 +641,7 @@ role_name: "司机"
 | receive_name          | String |                                             收货人姓名 |
 | note          | String |                                             备注 |
 | customer      |String  |                                              客户|
+| user_no      |String  |                                              客户单号|
 #### 返回详情
 成功：
 ```
@@ -668,7 +669,8 @@ role_name: "司机"
             "receive_time": "2018-01-05 08:15:00",
             "price": "22.00",
             "order_no": "ON1222121212121444",
-            "customer":"工商银行"
+            "customer":"工商银行",
+             "user_no":"u1111",
        },
     "status": 1
 }
@@ -701,7 +703,7 @@ role_name: "司机"
 | create_mobile          | String |                                             创建人手机号 |
 | send_mobile          | String |                                             发货人手机号 |
 | receive_mobile          | String |                                             收货人手机号 |
-| order_no          | String |                                             订单号 |
+| order_no          | String |                                             订单号（托运单号） |
 | volume          | Decimal |                                             体积 |
 | weight          | Decimal |                                             重量 |
 | number          | Int |                                             数量（单位件）。 |
@@ -716,6 +718,7 @@ role_name: "司机"
 | receive_name          | String |                                             收货人姓名 |
 | note          | String |                                             备注 |
 | customer      | String |                                              客户名称|
+| user_no      |String  |                                              客户单号|
 #### 返回详情
 成功：
 ```
@@ -744,7 +747,8 @@ role_name: "司机"
             "receive_time": "2018-01-05 08:15:00",
             "price": "22.00",
             "order_no": "ON1222121212121444",
-            "customer":"工商银行"
+            "customer":"工商银行",
+            "user_no":"u1111",
         }
     ],
     "status": 1
@@ -772,7 +776,7 @@ role_name: "司机"
 | create_mobile          | String |                                             创建人手机号 |
 | send_mobile          | String |                                             发货人手机号 |
 | receive_mobile          | String |                                             收货人手机号 |
-| order_no          | String |                                             订单号 |
+| order_no          | String |                                             订单号（托运单号） |
 | volume          | Decimal |                                             体积 |
 | weight          | Decimal |                                             重量 |
 | number          | Int |                                             数量（单位件）。 |
@@ -782,11 +786,12 @@ role_name: "司机"
 | send_time          | Date |                                             发货时间 |
 | receive_time          | Date |                                             收获时间 |
 | status          | Int |                                             订单状态 1：未发货，2：在途，3：已完成，4：已评价 |
-| user_id          | String |                                             下单人用户  |
+| user_id          | String |                                             下单人用户 （客户代码） |
 | send_name          | String |                                             发货人姓名 |
 | receive_name          | String |                                             收货人姓名 |
 | note          | String |                                             备注 |
 | customer      | String    |                                           客户|
+| user_no      |String  |                                              客户单号|
 #### 返回详情
 成功：
 ```
@@ -821,7 +826,7 @@ role_name: "司机"
 | create_mobile          | String |                                             创建人手机号 |
 | send_mobile          | String |                                             发货人手机号 |
 | receive_mobile          | String |                                             收货人手机号 |
-| order_no          | String |                                             订单号 |
+| order_no          | String |                                             订单号（托运单号） |
 | volume          | Decimal |                                             体积 |
 | weight          | Decimal |                                             重量 |
 | number          | Int |                                             数量（单位件）。 |
@@ -831,11 +836,12 @@ role_name: "司机"
 | send_time          | Date |                                             发货时间 |
 | receive_time          | Date |                                             收获时间 |
 | status          | Int |                                             订单状态 |
-| user_id          | Int |                                             下单人用户id |
+| user_id          | Int |                                             下单人用户（客户代码） |
 | send_name          | String |                                             发货人姓名 |
 | receive_name          | String |                                             收货人姓名 |
 | note          | String |                                             备注 |
 | customer      | String    |                                           客户|
+| user_no      |String  |                                              客户单号|
 #### 返回详情
 成功：
 ```
