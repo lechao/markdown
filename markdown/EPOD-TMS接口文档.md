@@ -1291,3 +1291,69 @@ number: 20
 ```
 {"status": 0, "message": "获取数据失败!"}
 ```
+# 7.1订单商品接口（添加商品）
+请求地址：http://47.93.8.36:8000/tms/goods/put
+请求方式：POST 
+
+
+#### 所需参数
+
+| 名称           |  类型  |                                             描述 |
+| -------------- | :----: | -----------------------------------------------: |
+| good_no          | String |                                             商品编号 |
+| good_name          | String |                                             商品名称 |
+| shpm_row          | Int |                                             行号 |
+| ld_qnty          | Decimal |                                             提货数量 |
+| ld_gross_w          | Decimal |                                             提货重量 |
+| ld_vol          | Decimal |                                             提货体积 |
+| task_no          | String |                                             任务号 |
+
+#### 返回详情
+成功：
+```
+{
+    "message": "success",
+    "status": 1,
+    "data": {
+        "id": 7
+    }
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+
+# 7.2商品接口（更新任务数据）
+请求地址：http://47.93.8.36:8000/tms/goods/update
+请求方式：POST 
+
+
+#### 所需参数
+
+| 名称           |  类型  |                                             描述 |
+| -------------- | :----: | -----------------------------------------------: |
+| good_no          | String |                                             商品编号 |
+| good_name          | String |                                             商品名称 |
+| shpm_row          | Int |                                             行号 |
+| ld_qnty          | Decimal |                                             提货数量 |
+| ld_gross_w          | Decimal |                                             提货重量 |
+| ld_vol          | Decimal |                                             提货体积 |
+| task_no          | String |                                             任务号 |
+
+#### 返回详情
+成功：
+```
+{
+    "message": "success",
+    "status": 1
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
