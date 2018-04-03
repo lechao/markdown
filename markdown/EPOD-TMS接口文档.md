@@ -858,14 +858,14 @@ role_name: "司机"
 
 # 5.1运单接口获取
 
-请求地址：http://47.93.8.36:8000/tms/trips/get/{id}/  
+请求地址：http://47.93.8.36:8000/tms/trips/get/{trip_no}/
 请求方式：GET
 
 #### 所需参数
 
 | 名称 | 类型 |           描述 |
 | ---- | :--: | -------------: |
-| id   | Int  | 运单id（必填） |
+| trip_no  | String  | 运单号（必填） |
 
 #### 返回参数
 
@@ -1042,7 +1042,6 @@ status: 1
 
 | 名称           |  类型  |                                             描述 |
 | -------------- | :----: | -----------------------------------------------: |
-| id          | Int |                                             运单id |
 | driver_uid          | Int |                                             司机用户Id |
 | driver_mobile          | String |                                             司机手机号 |
 | create_uid          | Int |                                             创建人用户Id |
@@ -1076,14 +1075,14 @@ status: 1
 
 # 6.1任务接口获取
 
-请求地址：http://47.93.8.36:8000/tms/tasks/get/{id}/  
+请求地址：http://47.93.8.36:8000/tms/tasks/get/{task_no}/  
 请求方式：GET
 
 #### 所需参数
 
 | 名称 | 类型 |           描述 |
 | ---- | :--: | -------------: |
-| id   | Int  | 任务单id（必填） |
+| task_no   | String  | 任务单号（必填） |
 
 #### 返回参数
 
@@ -1214,8 +1213,8 @@ number: 20
 
 | 名称           |  类型  |                                             描述 |
 | -------------- | :----: | -----------------------------------------------: |
-| order_id          | Int |                                             订单Id |
-| trip_id          | Int |                                             派送运单Id |
+| order_no          | String |                                             订单号 |
+| trip_no          | String |                                             派送运单号 |
 | task_no          | String |                                             任务号 |
 | volume          | Decimal |                                             体积 |
 | weight          | Decimal |                                             重量 |
@@ -1258,9 +1257,8 @@ number: 20
 
 | 名称           |  类型  |                                             描述 |
 | -------------- | :----: | -----------------------------------------------: |
-| id          | Int |                                             任务Id |
-| order_id          | Int |                                             订单Id |
-| trip_id          | Int |                                             派送运单Id |
+| order_no          | String |                                             订单号 |
+| trip_no          | String |                                             派送运单号 |
 | task_no          | String |                                             任务号 |
 | volume          | Decimal |                                             体积 |
 | weight          | Decimal |                                             重量 |
