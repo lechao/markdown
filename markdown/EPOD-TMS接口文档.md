@@ -810,7 +810,7 @@ role_name: "司机"
 {"status": 0, "message": "获取数据失败!"}
 ```
 
-# 4.4订单接口（更新订单数据）
+# 4.4订单接口（更新订单数据，如果没有根据order_no查询到订单，则新增订单）
 请求地址：http://47.93.8.36:8000/tms/orders/update
 请求方式：POST 
 
@@ -1033,7 +1033,7 @@ status: 1
 {"status": 0, "message": "获取数据失败!"}
 ```
 
-# 5.4运单接口（更新运单数据）
+# 5.4运单接口（更新运单数据，如果没有根据trip_no查询到运单，则新增运单）
 请求地址：http://47.93.8.36:8000/tms/trips/update
 请求方式：POST 
 
@@ -1102,7 +1102,8 @@ status: 1
 | status          | Int |                                             状态；1：未收获；2：运输中；3：已结束 |
 | send_name          | String |                                             发货人姓名 |
 | receive_name          | String |                                         收货人姓名 |
-
+|send_mobile|String|发货人手机|
+|receive_mobile|String|收货人手机|
 #### 返回详情
 成功：
 ```
@@ -1248,7 +1249,7 @@ number: 20
 {"status": 0, "message": "获取数据失败!"}
 ```
 
-# 6.4任务接口（更新任务数据）
+# 6.4任务接口（更新任务数据，如果没有根据task_no查询到任务，则新增任务）
 请求地址：http://47.93.8.36:8000/tms/tasks/update
 请求方式：POST 
 
@@ -1323,7 +1324,7 @@ number: 20
 {"status": 0, "message": "获取数据失败!"}
 ```
 
-# 7.2商品接口（更新任务数据）
+# 7.2商品接口（更新任务数据，如果没有根据good_no查询到商品，则新增商品）
 请求地址：http://47.93.8.36:8000/tms/goods/update
 请求方式：POST 
 
