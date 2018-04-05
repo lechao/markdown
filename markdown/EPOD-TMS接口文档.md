@@ -635,7 +635,7 @@ role_name: "司机"
 | receive_address          | String |                                             收获地址 |
 | send_time          | Date |                                             发货时间 |
 | receive_time          | Date |                                             收获时间 |
-| status          | Int |                                             订单状态 |
+| status          | Int |                                             订单状态 1-未发货，2-在途，3-已完成，4-已评价 |
 | user_id          | String |                                             下单人用户 唯一登录名 |
 | send_name          | String |                                             发货人姓名 |
 | receive_name          | String |                                             收货人姓名 |
@@ -712,7 +712,7 @@ role_name: "司机"
 | receive_address          | String |                                             收获地址 |
 | send_time          | Date |                                             发货时间 |
 | receive_time          | Date |                                             收获时间 |
-| status          | Int |                                             订单状态 |
+| status          | Int |                                             订单状态1-未发货，2-在途，3-已完成，4-已评价 |
 | user_id          | String |                                             下单人用户登录名 |
 | send_name          | String |                                             发货人姓名 |
 | receive_name          | String |                                             收货人姓名 |
@@ -834,7 +834,7 @@ role_name: "司机"
 | receive_address          | String |                                             收获地址 |
 | send_time          | Date |                                             发货时间 |
 | receive_time          | Date |                                             收获时间 |
-| status          | Int |                                             订单状态 |
+| status          | Int |                                             订单状态1-未发货，2-在途，3-已完成，4-已评价 |
 | user_id          | Int |                                             下单人用户（客户代码） |
 | send_name          | String |                                             发货人姓名 |
 | receive_name          | String |                                             收货人姓名 |
