@@ -220,3 +220,34 @@ message: "发车成功"
 ```
 {"status": 0, "message": "获取数据失败!"}
 ```
+
+# 7.司机任务大厅（状态数量接口）
+请求地址：==http://47.93.8.36:8000/driver/trip_count/==  
+请求方式：==POST==  
+
+
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+username | String | 用户登录名（用户手机---司机手机）（必填）
+
+成功：
+```
+{
+    "data": {
+        "nosend_count": 1,//未发车
+        "sended_count": 0,//已结束
+        "sending_count": 1,//运输中
+        "all_count": 2//总数量
+    },
+    "message": "success",
+    "status": 1
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
