@@ -64,3 +64,99 @@ newpassword | String | 新用户密码
 ```
 {"status": 0, "message": "修改密码失败!"}
 ```
+
+
+# 3.司机任务列表
+请求地址：==http://47.93.8.36:8000/driver/gettaskinfo/==  
+请求方式：==POST==  
+
+
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+username | String | 用户登录名（及手机号）（必填）
+ordno | String | 输入的订单号（可空）
+timefrom | String | 输入的起始时间（可空） （类似：2017-12-12）
+timeto | String | 输入的结束时间（可空） 
+status | String | 输入的任务状态，1-未发货，2-在途，3-已完成，4-已评价（可空） 
+offset | int | 偏移量（必填） 
+limit | int |获取数量（必填）
+
+成功：
+```
+{
+message: "success",
+data: [
+{
+trip_id：1,//运单id
+plate_number: "苏BM3028", //车牌号
+tot_vol: "0.00",//总体积
+trip_no: "170706013888",//客户单号
+pre_load_time: "2017-07-03 15:37:00",//要求提货时间
+create_uid: "17715671569",//创建用户（APP用不到）
+note: "",//发运备注
+tot_gross_w: "0",//总重量
+site_num: 0,//停靠站点数目
+create_time: "2018-04-05 00:50:43",//创建时间（APP用不到）
+eta: "2017-07-04 15:37:00",//ETA
+driver_mobile: "17715671569",//电话
+gps_no: "",//GPS号
+from_address: "养乐多合肥",//起点
+status: 3,//状态
+to_address: "养乐多无锡",//终点
+driver_uid: "17715671569",//司机用户号（APP用不到，等同于司机手机号）
+driver_name: "潘化强",//司机名称
+pre_ubload_time: "2017-07-04 15:37:00"//要求到货时间
+}
+],
+status: 1
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+
+# 4.司机任务调度单
+请求地址：==http://47.93.8.36:8000/driver/gettaskdetail/==  
+请求方式：==POST==  
+
+
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+trip_id | Int | 调度单id（必填）
+
+成功：
+```
+{
+status: 1,
+data: [
+{
+phone: "", //电话
+address: "浦东新区1",//地址
+name: "普菲斯临港",//地点名称
+time: "2017-07-03 00:00:00",//时间
+flag: "load"//类型，load  提货  unload  卸货
+},
+{
+phone: "69153330 * 64",
+address: "杨浦区",
+name: "上海夏晖",
+time: "2017-07-03 00:00:00",
+flag: "unload"
+}
+],
+message: "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
