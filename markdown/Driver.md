@@ -261,9 +261,9 @@ username | String | 用户登录名（用户手机---司机手机）（必填）
 status: 1,
 data: [
 {
-priority: 100,
-exception_id: 1,
-exception_ch: "道路交通问题"
+priority: 100,//权重（用在排序）
+exception_id: 1,//id
+exception_ch: "道路交通问题"//名称
 },
 {
 priority: 100,
@@ -297,6 +297,55 @@ exception_ch: "货损货差"
 }
 ],
 message: "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+# 9.车辆检查（检查项列表接口）
+请求地址：==http://47.93.8.36:8000/driver/getchecks/==  
+请求方式：==GET==  
+
+成功：
+```
+{
+data: [
+{
+check_ch: "车辆清洁无异味",
+priority: 100,
+check_id: 1
+},
+{
+check_ch: "车辆设备检查",
+priority: 100,
+check_id: 2
+},
+{
+check_ch: "随车文件检查",
+priority: 100,
+check_id: 3
+},
+{
+check_ch: "冷机检查",
+priority: 100,
+check_id: 4
+},
+{
+check_ch: "装载要求检查",
+priority: 100,
+check_id: 5
+},
+{
+check_ch: "温度设置检查",
+priority: 100,
+check_id: 6
+}
+],
+message: "获取成功",
+status: 1
 }
 ```
 
