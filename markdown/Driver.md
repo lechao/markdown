@@ -502,3 +502,142 @@ task_id | Int | 任务id（必填）
 ```
 {"status": 0, "message": "获取数据失败!"}
 ```
+# 14.到场确认接口
+请求地址：==http://47.93.8.36:8000/driver/action_confirm/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+task_id | Int | 任务id（必填）
+成功：
+```
+{
+    "status": 1,
+    "message": "到场确认成功",
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+
+# 15.开始装货接口
+请求地址：==http://47.93.8.36:8000/driver/action_confirm/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+task_id | Int | 任务id（必填）
+成功：
+```
+{
+    "status": 1,
+    "message": "到场确认成功",
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+# 16.提货接口
+请求地址：==http://47.93.8.36:8000/driver/load/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+task_id | Int | 任务id（必填）
+goods | List | 提货货品数量 重量 体积（必填）
+content|String| 异常描述（非必填）
+longitude|String|经纬度（必填）
+latitude|String|经纬度（必填）
+images|List|图片集合（非必填）
+### 请求体
+```
+{
+	"task_id":2,
+	"goods": [
+		{
+			"good_id":1,//货品id
+			"number":10,//货品数量
+			"weight":22.2,//提货重量
+			"volume":22.2 //提货体积
+		}],
+	"content": "异常描述",
+	"longitude":"1212.1212",
+	"latitude":"1212.1212",
+	"images":[
+		{
+			"base64":"121212"
+		}
+		]
+}
+```
+###### 成功：
+```
+{
+    "message": "提交成功",
+    "status": 1
+}
+```
+
+#####失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+
+# 17.卸货接口
+请求地址：==http://47.93.8.36:8000/driver/unload/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+task_id | Int | 任务id（必填）
+goods | List | 提货货品数量 重量 体积（必填）
+content|String| 异常描述（非必填）
+longitude|String|经纬度（必填）
+latitude|String|经纬度（必填）
+images|List|图片集合（非必填）
+### 请求体
+```
+{
+	"task_id":2,
+	"goods": [
+		{
+			"good_id":1,//货品id
+			"number":10,//卸货数量
+			"weight":22.2,//卸货重量
+			"volume":22.2, //卸货体积
+			"refusereason":"拒绝原因" //拒绝原因
+		}],
+	"content": "异常描述",
+	"longitude":"1212.1212",
+	"latitude":"1212.1212",
+	"images":[
+		{
+			"base64":"121212"
+		}
+		]
+}
+```
+###### 成功：
+```
+{
+    "message": "提交成功",
+    "status": 1
+}
+```
+
+#####失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
