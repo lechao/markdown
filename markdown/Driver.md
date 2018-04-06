@@ -161,7 +161,7 @@ message: "获取成功"
 {"status": 0, "message": "获取数据失败!"}
 ```
 # 5.司机子任务列表
-请求地址：==http://47.93.8.36:8000/driver/gettaskdetail/==  
+请求地址：==http://47.93.8.36:8000/driver/getsubtasklist/==  
 请求方式：==POST==  
 
 
