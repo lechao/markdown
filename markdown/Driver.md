@@ -389,3 +389,43 @@ task_id | Int | 任务id（必填）
 ```
 {"status": 0, "message": "获取数据失败!"}
 ```
+# 11.异常上报接口
+请求地址：==http://47.93.8.36:8000/driver/putexecption/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+task_id | Int | 任务id（必填）
+exceptionIds | String | 异常id集合,实例（1,2,3）（必填）
+content|String| 异常描述（非必填）
+longitude|String|经纬度（必填）
+latitude|String|经纬度（必填）
+images|List|图片集合（非必填）
+### 请求体
+```
+{
+	"task_id":2,
+	"exceptionIds": "1,2,3",
+	"content": "异常描述",
+	"longitude":"1212.1212",
+	"latitude":"1212.1212",
+	"images":[
+		{
+			"base64":"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBYRXhpZgAATU0AKgAAAAgAAgESAAMAAAABAA.............ijyD/z0P5VZyn//2Q=="
+		}
+		]
+}
+成功：
+```
+{
+    "message": "提交成功",
+    "status": 1
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
