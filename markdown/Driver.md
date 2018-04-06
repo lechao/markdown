@@ -251,3 +251,57 @@ username | String | 用户登录名（用户手机---司机手机）（必填）
 ```
 {"status": 0, "message": "获取数据失败!"}
 ```
+# 8.异常上报（异常列表接口）
+请求地址：==http://47.93.8.36:8000/driver/getexceptions/==  
+请求方式：==GET==  
+
+成功：
+```
+{
+status: 1,
+data: [
+{
+priority: 100,
+exception_id: 1,
+exception_ch: "道路交通问题"
+},
+{
+priority: 100,
+exception_id: 2,
+exception_ch: "客户问题"
+},
+{
+priority: 100,
+exception_id: 3,
+exception_ch: "卸货问题"
+},
+{
+priority: 100,
+exception_id: 4,
+exception_ch: "在途事故"
+},
+{
+priority: 100,
+exception_id: 5,
+exception_ch: "车辆设备故障"
+},
+{
+priority: 100,
+exception_id: 6,
+exception_ch: "温度异常"
+},
+{
+priority: 100,
+exception_id: 7,
+exception_ch: "货损货差"
+}
+],
+message: "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
