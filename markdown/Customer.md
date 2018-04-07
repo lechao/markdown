@@ -158,7 +158,7 @@ ordno | String | 订单号（必填）
 ```
 
 # 4.查看物流
-请求地址：==http://47.93.8.36:8000/customer/getorders_detail/==  
+请求地址：==http://47.93.8.36:8000/customer/gettasks_detail/==
 请求方式：==POST==  
 
 
@@ -170,44 +170,116 @@ ordno | String | 订单号（必填）
 成功：
 ```
 {
-    "message": "success",
     "status": 1,
-    "data": {
-        "boxes_num": 3,
-        "send_time": "2018-01-01 08:15:00",
-        "note": "不要磕碰",
-        "create_time": "2018-03-25 16:21:24",
-        "create_mobile": "15221089804",
-        "number": 30,
-        "receive_mobile": "15221089804",
-        "price": "22.00",
-        "receive_name": "pengpeng",
-        "send_name": "Happy",
-        "volume": "22.23",
-        "weight": "3",
-        "send_mobile": "15221089804",
-        "trips": [
-            {
-                "note": "备注",
-                "driver_mobile": "15221089804",
-                "trip_no": "TP123943762839232",
-                "driver_uid": 5,
-                "create_uid": 5,
-                "plate_number": "沪M12j11111",
-                "driver_name": "李白1",
-                "create_time": "2018-03-25 16:40:41",
-                "status": 1
-            }
-        ],
-        "status": 1,
-        "receive_time": "2018-01-05 08:15:00",
-        "receive_address": "上海市闵行区100路",
-        "content": "订单内容123",
-        "order_no": "ON1222121212121444",
-        "create_uid": 5,
-        "send_address": "上海市浦东新区金科路100号",
-        "user_id": 5
-    }
+    "data": [
+        {
+            "weight": "0.00", //重量
+            "boxes_num": 600, //箱数
+            "task_no": "2017070300006",//任务号
+            "number": 600,//件数
+            "receive_time": "2017-07-03 00:00:00",//收获时间
+            "status": 3,//任务状态
+            "receive_mobile": "69153330 * 64",//收货人手机号
+            "order_id": 22,//订单id
+            "receive_address": "嘉定区陈宝公路58号马陆工业城内",//收获地址
+            "create_time": "2018-04-05 09:52:42",
+            "receive_name": "Linda",//收货人姓名
+            "volume": "0",//体积
+            "trip": {
+                "tot_gross_w": "0",  //整个运单的 重量
+                "to_address": "????",  //运单的目的地
+                "driver_mobile": "15921582655", //司机电话
+                "gps_no": "?D08942-??", //gpd 编号
+                "status": 2, //运单状态
+                "eta": "2017-07-03 00:00:00", /eta
+                "trip_no": "170703021741",//运单号
+                "tot_vol": "0.00", //整个运单的 体积
+                "driver_uid": "13013075686", 
+                "driver_name": "???",//司机姓名
+                "create_time": "2018-04-04 14:19:18",
+                "plate_number": "?D08942",//车牌号
+                "trip_id": 18, //运单id
+                "pre_load_time": "2017-07-03 00:00:00",
+                "from_address": "?????", //运单 起始地
+                "create_uid": "15921582655",
+                "note": "",
+                "pre_ubload_time": "2017-07-03 00:00:00",
+            },
+			"actions": [                  //行程信息
+                    {
+                        "create_time": "2018-04-06 12:48:23",  //时间
+                        "task_id": 3,
+                        "check_codes": "",
+                        "longitude": "1212.1212", //经纬度
+                        "latitude": "1212.1212",  //经纬度
+                        "notes": "异常描述", //行程描述
+                        "type": "exception",
+                        "exception_codes": "1,2,3",
+                        "action_name": "异常上报" //行程名称
+                    }
+                ],
+            "trip_id": 18,  //运单id
+            "send_name": "",  //发货人姓名
+            "send_time": "2017-07-03 00:00:00", //发货时间
+            "send_mobile": "", //发货人电话
+            "send_address": "上海市临港新城捷兴路211号",//发货地址
+            "order_no": "2017070300006" //订单号
+        },
+        {
+            "weight": "0",
+            "boxes_num": 600,
+            "task_no": "2017070300007",
+            "number": 600,
+            "receive_time": "2017-07-03 00:00:00",
+            "status": 3,
+            "receive_mobile": "69153330 * 64",
+            "order_id": 22,
+            "receive_address": "嘉定区陈宝公路58号马陆工业城内",
+            "create_time": "2018-04-05 09:52:42",
+            "receive_name": "Linda",
+            "volume": "0",
+            "trip": {
+                "tot_gross_w": "0",
+                "to_address": "养乐多无锡",
+                "driver_mobile": "17715671569",
+                "gps_no": "",
+                "status": 2,
+                "eta": "2017-07-04 15:37:00",
+                "trip_no": "170706013888",
+                "tot_vol": "0.00",
+                "driver_uid": "13013075686",
+                "driver_name": "潘化强",
+                "create_time": "2018-04-05 00:50:43",
+                "plate_number": "苏BM3028",
+                "trip_id": 19,
+                "pre_load_time": "2017-07-03 15:37:00",
+                "from_address": "养乐多合肥",
+                "create_uid": "17715671569",
+                "note": "",
+                "pre_ubload_time": "2017-07-04 15:37:00",
+            },
+			"actions": [
+                    {
+                        "create_time": "2018-04-06 12:48:23",
+                        "task_id": 4,
+                        "check_codes": "",
+                        "longitude": "1212.1212",
+                        "latitude": "1212.1212",
+                        "notes": "异常描述",
+                        "type": "exception",
+                        "exception_codes": "1,2,3",
+                        "action_name": "异常上报"
+                    }
+                ],
+            "trip_id": 19,
+            "send_name": "",
+            "send_time": "2017-07-03 00:00:00",
+            "send_mobile": "",
+            "send_address": "上海市临港新城捷兴路211号",
+            "order_no": "2017070300006"
+        }
+    ],
+    "message": "success"
 }
 ```
 
