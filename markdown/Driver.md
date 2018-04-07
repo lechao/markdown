@@ -525,7 +525,7 @@ task_id | Int | 任务id（必填）
 ```
 
 # 15.开始装货接口
-请求地址：==http://47.93.8.36:8000/driver/action_confirm/==  
+请求地址：==http://47.93.8.36:8000/driver/action_load/==  
 请求方式：==POST==  
 ### 所需参数
 
