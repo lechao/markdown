@@ -641,3 +641,53 @@ images|List|图片集合（非必填）
 ```
 {"status": 0, "message": "获取数据失败!"}
 ```
+
+# 18.拒收原因接口
+请求地址：==http://47.93.8.36:8000/driver/getrefuses/==  
+请求方式：==GET==  
+
+成功：
+```
+{
+message: "获取成功",
+status: 1,
+data: [
+{
+check_id: 1,
+priority: 100,
+check_ch: "货物损坏"
+},
+{
+check_id: 2,
+priority: 100,
+check_ch: "包装破损"
+},
+{
+check_id: 3,
+priority: 100,
+check_ch: "短少"
+},
+{
+check_id: 4,
+priority: 100,
+check_ch: "包装潮湿"
+},
+{
+check_id: 5,
+priority: 100,
+check_ch: "客户拒收"
+},
+{
+check_id: 6,
+priority: 100,
+check_ch: "仓库损坏"
+}
+]
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
