@@ -691,3 +691,35 @@ check_ch: "仓库损坏"
 ```
 {"status": 0, "message": "获取数据失败!"}
 ```
+# 19.消息中心接口
+请求地址：==http://47.93.8.36:8000/driver/messages/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+username | String | 登录用户名---用户手机（必填）
+成功：
+```
+{
+    "status": 1,
+    "data": [
+        {
+            "message_id": 1,
+            "title": "标题",
+            "type": "system",
+            "create_time": "2018-04-09 21:42:17",
+            "user_id": "1",
+            "is_read": false,
+            "content": "内容内容内容内容内容内容"
+        }
+    ],
+    "message": "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
