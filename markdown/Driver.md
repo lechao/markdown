@@ -108,6 +108,7 @@ to_address: "养乐多无锡",//终点
 driver_uid: "17715671569",//司机用户号（APP用不到，等同于司机手机号）
 driver_name: "潘化强",//司机名称
 pre_ubload_time: "2017-07-04 15:37:00"//要求到货时间
+temperature:"0"//温度
 }
 ],
 status: 1
