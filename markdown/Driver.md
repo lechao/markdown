@@ -791,3 +791,34 @@ message_ids|String| 消息ids  举例：1,2,3；(必填)
 ```
 {"status": 0, "message": "获取数据失败!"}
 ```
+# 23.消息中心（新消息）
+请求地址：==http://47.93.8.36:8000/driver/newmessages/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+username | String | 登录用户名---用户手机（必填）
+message_id|Int| app 最新消息id
+成功：
+```
+{
+    "status": 1,
+    "message": "有新消息",
+    "data": {
+        "type": "system",
+        "title": "1",
+        "content": "1",
+        "create_time": "2018-04-09 22:35:22",
+        "user_id": "1",
+        "message_id": 2,
+        "is_read": false
+    }
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "没有消息!"}
+```
