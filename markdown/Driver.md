@@ -172,6 +172,7 @@ message: "获取成功"
 ------- | ---------- | ------------- 
 trip_id | Int | 调度单id（必填）
 task_id | Int | 任务id（必填）
+act_type|String|提货（load）卸货（unload）
 
 成功：
 ```
