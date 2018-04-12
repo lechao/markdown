@@ -288,3 +288,26 @@ ordno | String | 订单号（必填）
 ```
 {"status": 0, "message": "获取数据失败!"}
 ```
+# 5.获取配置信息
+请求地址：==http://47.93.8.36:8000/customer/config/==  
+请求方式：==GET==  
+### 所需参数
+
+成功：
+```
+{
+status: 1,
+data: {
+phone: "11212121212", //客服电话
+downloadurl: "url1",//新版本下载地址
+version: "1.00"//app版本
+},
+message: "获取配置成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "没有消息!"}
+```
