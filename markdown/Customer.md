@@ -311,3 +311,136 @@ message: "获取配置成功"
 ```
 {"status": 0, "message": "没有消息!"}
 ```
+
+
+# 6.消息中心接口
+请求地址：==http://47.93.8.36:8000/customer/messages/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+power | String | 登录用户名---用户权限power 字段（必填）
+成功：
+```
+{
+    "status": 1,
+    "data": [
+        {
+            "message_id": 1,
+            "title": "标题",
+            "type": "system",
+            "create_time": "2018-04-09 21:42:17",
+            "user_id": "1",
+            "is_read": false,
+            "content": "内容内容内容内容内容内容"
+        }
+    ],
+    "message": "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+
+# 7.消息中心已读（更改状态为已读）
+请求地址：==http://47.93.8.36:8000/customer/readmessage/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+power | String | 登录用户名---用户权限power 字段（必填）
+message_ids|String| 消息ids  举例：1,2,3；(必填)
+成功：
+```
+{
+    "status": 1,
+    "message": "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+
+# 8.消息中心未读（更改状态为未读读）
+请求地址：==http://47.93.8.36:8000/customer/unreadmessage/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+power | String | 登录用户名---用户权限power 字段（必填）
+message_ids|String| 消息ids  举例：1,2,3；(必填)
+成功：
+```
+{
+    "status": 1,
+    "message": "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+# 9.消息中心删除（删除消息）
+请求地址：==http://47.93.8.36:8000/customer/delmessage/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+power | String | 登录用户名---用户权限power 字段（必填）
+message_ids|String| 消息ids  举例：1,2,3；(必填)
+成功：
+```
+{
+    "status": 1,
+    "message": "删除成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+# 10.消息中心（新消息）
+请求地址：==http://47.93.8.36:8000/customer/newmessages/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+power | String | 登录用户名---用户权限power 字段（必填）
+message_id|Int| app 最新消息id
+成功：
+```
+{
+    "status": 1,
+    "message": "有新消息",
+    "data": {
+        "type": "customer",
+        "title": "1",
+        "content": "1",
+        "create_time": "2018-04-09 22:35:22",
+        "user_id": "1",
+        "message_id": 2,
+        "is_read": false
+    }
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "没有消息!"}
+```
