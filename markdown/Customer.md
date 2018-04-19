@@ -414,7 +414,7 @@ message_ids|String| 消息ids  举例：1,2,3；(必填)
 {"status": 0, "message": "获取数据失败!"}
 ```
 # 10.消息中心（新消息）
-请求地址：==http://47.93.8.36:8000/customer/newmessages/==  
+请求地址：==http://47.93.8.36:8000/customer/newmessage/==  
 请求方式：==POST==  
 ### 所需参数
 
@@ -436,6 +436,32 @@ message_id|Int| app 最新消息id
         "message_id": 2,
         "is_read": false
     }
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "没有消息!"}
+```
+# 11.评价提交
+请求地址：==http://47.93.8.36:8000/customer/putcomment/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+user_id | String | 登录用户名：手机号（必填）
+order_id| Int| 订单的id（必填）
+driver_score| Int| 司机的评价分数
+service_score| Int| 客服的评价分数
+time_score| Int| 时效的评价分数
+content| String| 评价内容
+成功：
+```
+{
+    "status": 1,
+    "message": "提交成功",
 }
 ```
 
