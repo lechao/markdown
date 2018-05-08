@@ -307,15 +307,26 @@ body {
   line-height: 1rem;
   font-size: .6rem;
 }
+.gallery-cell .new-expert dd p:nth-of-type(3),.gallery-cell .new-expert dd p:nth-of-type(1){
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.gallery-cell .new-expert dd p:nth-of-type(2){
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .expert-box {
   overflow: hidden;
   position: relative;
 }
 .expert-box .gallery-cell {
-  height: 18.35rem;
+  height: 19rem;
 }
 .expert-box .flickity-slider {
-  height: 18.35rem;
+  height: 19rem;
 }
 .hospital-box {
   overflow: hidden;
@@ -436,6 +447,8 @@ body {
 }
 .CP .CpList li {
   float: left;
+  width:50%;
+  text-align:center;
 }
 .CP .CpList li img {
   height: 2.75rem;
@@ -906,3 +919,34 @@ body {
 .detailed dl dt{font-size:1.2rem;color:#333;line-height:1.5rem;padding-top:1.6rem;}
 .detailed dl dd{font-size:.7rem;color:#333;padding-bottom:3.4rem;}
 .detailed dl dd p{line-height:1.1rem;margin-top:1.4rem;}
+/*****优势详情******/
+.youshi-wrap{background:#fff;}
+.youshi-wrap img{margin-top:2rem;width:100%;}
+.youshi-wrap p{padding:0 1rem;font-size:.7rem;color:#333;line-height:1.1rem;}
+/*****项目详情*****/
+.shengyu-wrap{background:#fff;}
+.shengyu-top-img{font-size:0;padding-top:2.5rem;}
+.shengyu-top-img img{width:100%;}
+.jsTab_title{height:2.8rem;background:#f8f8f8;}
+.jsTab_title li{float:left;width:33%;font-size:1rem;color:#333;padding-top:.8rem;text-align:center;}
+.jsTab_title li span{line-height:1rem;padding:0 .5rem;}
+.jsTab_title li.on span{color:#5f9d04;position: relative;}
+.jsTab_title li.on span:after{position: absolute;content:"";width:100%;height:.25rem;background:#70bd00;bottom:-.5rem;left:50%;margin-left:-50%;}
+.jsTab_con .qa{font-size:.75rem;padding:0 1.35rem;}
+.jsTab_con .qa dt{margin-top:1.85rem;}
+.jsTab_con .qa dd{line-height:1.2rem;}
+.jsTab_con .qa dd p span{color:#5f9d04;white-space:nowrap;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
