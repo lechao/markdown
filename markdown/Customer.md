@@ -113,20 +113,20 @@ ordno | String | 订单号（必填）
     "message": "success",
     "status": 1,
     "data": {
-        "boxes_num": 3,
-        "send_time": "2018-01-01 08:15:00",
-        "note": "不要磕碰",
-        "create_time": "2018-03-25 16:21:24",
+        "boxes_num": 3,//箱数
+        "send_time": "2018-01-01 08:15:00",//要求发货时间
+        "note": "不要磕碰",//注意事项
+        "create_time": "2018-03-25 16:21:24",
         "create_mobile": "15221089804",
-        "number": 30,
-        "receive_mobile": "15221089804",
-        "price": "22.00",
-        "receive_name": "pengpeng",
-        "send_name": "Happy",
-        "volume": "22.23",
-        "weight": "3",
-        "send_mobile": "15221089804",
-        "trips": [
+        "number": 30,//件数
+        "receive_mobile": "15221089804",//收货人电话
+        "price": "22.00",
+        "receive_name": "pengpeng",//收货人姓名
+        "send_name": "Happy",//发货人姓名
+        "volume": "22.23",//体积
+        "weight": "3",//重量
+        "send_mobile": "15221089804",//发货人电话
+        "trips": [
             {
                 "note": "备注",
                 "driver_mobile": "15221089804",
@@ -139,14 +139,14 @@ ordno | String | 订单号（必填）
                 "status": 1
             }
         ],
-        "status": 1,
-        "receive_time": "2018-01-05 08:15:00",
-        "receive_address": "上海市闵行区100路",
-        "content": "订单内容123",
-        "order_no": "ON1222121212121444",
-        "create_uid": 5,
-        "send_address": "上海市浦东新区金科路100号",
-        "user_id": 5
+        "status": 1,//状态
+        "receive_time": "2018-01-05 08:15:00",//要求收货时间
+        "receive_address": "上海市闵行区100路",//收货地址
+        "content": "订单内容123",//货品描述
+        "order_no": "ON1222121212121444",//订单号
+        "create_uid": 5,
+        "send_address": "上海市浦东新区金科路100号",//发货地址
+        "user_id": 5
     }
 }
 ```
@@ -287,4 +287,186 @@ ordno | String | 订单号（必填）
 
 ```
 {"status": 0, "message": "获取数据失败!"}
+```
+# 5.获取配置信息
+请求地址：==http://47.93.8.36:8000/customer/config/==  
+请求方式：==GET==  
+### 所需参数
+
+成功：
+```
+{
+status: 1,
+data: {
+phone: "11212121212", //客服电话
+downloadurl: "url1",//新版本下载地址
+version: "1.00"//app版本
+},
+message: "获取配置成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "没有消息!"}
+```
+
+
+# 6.消息中心接口
+请求地址：==http://47.93.8.36:8000/customer/messages/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+power | String | 登录用户名---用户权限power 字段（必填）
+成功：
+```
+{
+    "status": 1,
+    "data": [
+        {
+            "message_id": 1,
+            "title": "标题",
+            "type": "system",
+            "create_time": "2018-04-09 21:42:17",
+            "user_id": "1",
+            "is_read": false,
+            "content": "内容内容内容内容内容内容"
+        }
+    ],
+    "message": "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+
+# 7.消息中心已读（更改状态为已读）
+请求地址：==http://47.93.8.36:8000/customer/readmessage/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+power | String | 登录用户名---用户权限power 字段（必填）
+message_ids|String| 消息ids  举例：1,2,3；(必填)
+成功：
+```
+{
+    "status": 1,
+    "message": "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+
+# 8.消息中心未读（更改状态为未读读）
+请求地址：==http://47.93.8.36:8000/customer/unreadmessage/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+power | String | 登录用户名---用户权限power 字段（必填）
+message_ids|String| 消息ids  举例：1,2,3；(必填)
+成功：
+```
+{
+    "status": 1,
+    "message": "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+# 9.消息中心删除（删除消息）
+请求地址：==http://47.93.8.36:8000/customer/delmessage/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+power | String | 登录用户名---用户权限power 字段（必填）
+message_ids|String| 消息ids  举例：1,2,3；(必填)
+成功：
+```
+{
+    "status": 1,
+    "message": "删除成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+# 10.消息中心（新消息）
+请求地址：==http://47.93.8.36:8000/customer/newmessage/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+power | String | 登录用户名---用户权限power 字段（必填）
+message_id|Int| app 最新消息id
+成功：
+```
+{
+    "status": 1,
+    "message": "有新消息",
+    "data": {
+        "type": "customer",
+        "title": "1",
+        "content": "1",
+        "create_time": "2018-04-09 22:35:22",
+        "user_id": "1",
+        "message_id": 2,
+        "is_read": false
+    }
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "没有消息!"}
+```
+# 11.评价提交
+请求地址：==http://47.93.8.36:8000/customer/putcomment/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+user_id | String | 登录用户名：手机号（必填）
+order_id| Int| 订单的id（必填）
+driver_score| Int| 司机的评价分数
+service_score| Int| 客服的评价分数
+time_score| Int| 时效的评价分数
+content| String| 评价内容
+成功：
+```
+{
+    "status": 1,
+    "message": "提交成功",
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "没有消息!"}
 ```

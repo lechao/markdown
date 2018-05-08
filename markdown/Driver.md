@@ -108,6 +108,7 @@ to_address: "养乐多无锡",//终点
 driver_uid: "17715671569",//司机用户号（APP用不到，等同于司机手机号）
 driver_name: "潘化强",//司机名称
 pre_ubload_time: "2017-07-04 15:37:00"//要求到货时间
+temperature:"0"//温度
 }
 ],
 status: 1
@@ -171,6 +172,7 @@ message: "获取成功"
 ------- | ---------- | ------------- 
 trip_id | Int | 调度单id（必填）
 task_id | Int | 任务id（必填）
+act_type|String|提货（load）卸货（unload）
 
 成功：
 ```
@@ -640,4 +642,208 @@ images|List|图片集合（非必填）
 
 ```
 {"status": 0, "message": "获取数据失败!"}
+```
+
+# 18.拒收原因接口
+请求地址：==http://47.93.8.36:8000/driver/getrefuses/==  
+请求方式：==GET==  
+
+成功：
+```
+{
+message: "获取成功",
+status: 1,
+data: [
+{
+check_id: 1,
+priority: 100,
+check_ch: "货物损坏"
+},
+{
+check_id: 2,
+priority: 100,
+check_ch: "包装破损"
+},
+{
+check_id: 3,
+priority: 100,
+check_ch: "短少"
+},
+{
+check_id: 4,
+priority: 100,
+check_ch: "包装潮湿"
+},
+{
+check_id: 5,
+priority: 100,
+check_ch: "客户拒收"
+},
+{
+check_id: 6,
+priority: 100,
+check_ch: "仓库损坏"
+}
+]
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+# 19.消息中心接口
+请求地址：==http://47.93.8.36:8000/driver/messages/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+username | String | 登录用户名---用户手机（必填）
+成功：
+```
+{
+    "status": 1,
+    "data": [
+        {
+            "message_id": 1,
+            "title": "标题",
+            "type": "system",
+            "create_time": "2018-04-09 21:42:17",
+            "user_id": "1",
+            "is_read": false,
+            "content": "内容内容内容内容内容内容"
+        }
+    ],
+    "message": "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+
+# 20.消息中心已读（更改状态为已读）
+请求地址：==http://47.93.8.36:8000/driver/readmessage/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+username | String | 登录用户名---用户手机（必填）
+message_ids|String| 消息ids  举例：1,2,3；(必填)
+成功：
+```
+{
+    "status": 1,
+    "message": "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+
+# 21.消息中心未读（更改状态为未读读）
+请求地址：==http://47.93.8.36:8000/driver/unreadmessage/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+username | String | 登录用户名---用户手机（必填）
+message_ids|String| 消息ids  举例：1,2,3；(必填)
+成功：
+```
+{
+    "status": 1,
+    "message": "获取成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+# 22.消息中心删除（删除消息）
+请求地址：==http://47.93.8.36:8000/driver/delmessage/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+username | String | 登录用户名---用户手机（必填）
+message_ids|String| 消息ids  举例：1,2,3；(必填)
+成功：
+```
+{
+    "status": 1,
+    "message": "删除成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "获取数据失败!"}
+```
+# 23.消息中心（新消息）
+请求地址：==http://47.93.8.36:8000/driver/newmessages/==  
+请求方式：==POST==  
+### 所需参数
+
+名称 | 类型 | 描述
+------- | ---------- | ------------- 
+username | String | 登录用户名---用户手机（必填）
+message_id|Int| app 最新消息id
+成功：
+```
+{
+    "status": 1,
+    "message": "有新消息",
+    "data": {
+        "type": "system",
+        "title": "1",
+        "content": "1",
+        "create_time": "2018-04-09 22:35:22",
+        "user_id": "1",
+        "message_id": 2,
+        "is_read": false
+    }
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "没有消息!"}
+```
+# 24.获取配置信息
+请求地址：==http://47.93.8.36:8000/driver/config/==  
+请求方式：==GET==  
+### 所需参数
+
+成功：
+```
+{
+status: 1,
+data: {
+phone: "11212121212", //客服电话
+downloadurl: "url1",//新版本下载地址
+version: "1.00"//app版本
+},
+message: "获取配置成功"
+}
+```
+
+失败：
+
+```
+{"status": 0, "message": "没有消息!"}
 ```
