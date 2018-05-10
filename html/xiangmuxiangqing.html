@@ -110,6 +110,14 @@
                     </dd>
                 </dl>
             </div>
+			<div class="jsTab_con">
+                <dl class="qa">
+                    <dt>冻卵介绍</dt>
+                    <dd>
+                        <p>冷冻卵子是单身女性保存生育力的首选方案。 智特医疗经过6年的评估目前只和美国有15年以上冻卵经验有在全美具有高试管宝宝成功率的3家诊所的4个医生合作。冷冻卵子要经过药物促排卵和取卵两个阶段。 药物促排卵阶段冻卵者连续注射大约10天促排卵药物以保障当月的卵泡都发...<span>展开更多>></span></p>
+                    </dd>
+				</dl>
+			</div>
             <div class="jsTab_con">
 
             </div>
@@ -150,6 +158,12 @@
                 $(this).parent().toggleClass('nav--active');
             });
             $(".flickity-viewport").height("auto");
+			$(".jsTab_title li").on('click', function(){
+				var i = $(this).index();//下标第一种写法
+				$(this).addClass('on').siblings().removeClass('on');
+				$('.jsTab_con').eq(i).show().siblings(".jsTab_con").hide();
+			
+			});
         })
     </script>
 </body>
